@@ -18,15 +18,21 @@ body {
 
 .container {
   text-align: center;
-  position: relative;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .heart-wrapper {
-  position: relative;
   z-index: 1;
   cursor: pointer;
   transition: transform 0.3s ease;
+  position: relative;
+  margin: 1rem 0;
 }
 
 .heart-wrapper:hover {
@@ -34,7 +40,6 @@ body {
 }
 
 .heart {
-  position: relative;
   width: 100px;
   height: 100px;
   transform: rotate(45deg);
@@ -51,7 +56,6 @@ body {
   height: 100px;
   border-radius: 50%;
   background-color: var(--primary-color);
-  box-shadow: 0 0 30px var(--shadow-color);
 }
 
 .heart::before {
@@ -86,11 +90,10 @@ body {
 }
 
 .quote-container {
-  position: relative;
-  margin-top: 3em;
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.5s ease-in-out;
+  width: 100%;
 }
 
 .quote-container.visible {
