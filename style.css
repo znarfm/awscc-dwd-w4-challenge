@@ -145,30 +145,59 @@ body {
 .floating-hearts {
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
   pointer-events: none;
   z-index: 0;
 }
 
 .floating-heart {
   position: absolute;
-  width: 10px;
-  height: 10px;
-  background: rgba(255, 255, 255, 0.5);
-  animation: float-up 4s linear infinite;
+  width: 15px;
+  height: 15px;
+  background: var(--primary-color);
+  transform: rotate(45deg);
   opacity: 0;
+  animation: float-up 4s linear infinite;
+}
+
+.floating-heart::before,
+.floating-heart::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.floating-heart::before {
+  top: -7.5px;
+  left: 0;
+}
+
+.floating-heart::after {
+  top: 0;
+  left: -7.5px;
 }
 
 @keyframes float-up {
   0% {
-    transform: translateY(100vh) scale(0);
+    transform: translateY(110vh) rotate(45deg) scale(0);
     opacity: 0;
   }
+  15% {
+    opacity: 0.3;
+  }
   50% {
-    opacity: 0.8;
+    opacity: 0.5;
+  }
+  85% {
+    opacity: 0.3;
   }
   100% {
-    transform: translateY(-100px) scale(1);
+    transform: translateY(-10vh) rotate(45deg) scale(1);
     opacity: 0;
   }
 }
