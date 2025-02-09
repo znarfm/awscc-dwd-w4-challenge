@@ -7,10 +7,25 @@
     <title>Heartbeat of Love</title>
   </head>
   <body>
-    <div class="container">
-      <div class="heart"></div>
-      <div class="quote-container"></div>
+    <div class="floating-hearts"></div>
+    <div class="top-controls">
+      <button class="theme-toggle">Toggle Theme</button>
+      <button class="hearts-toggle">Toggle Hearts</button>
     </div>
-    <script src="script"></script>
+    <div class="container">
+      <div class="heart-wrapper">
+        <div class="heart"></div>
+      </div>
+      <div class="quote-container">
+        <p class="quote"></p>
+        <div class="copy-indicator">Copied!</div>
+      </div>
+      <div class="controls">
+        <button class="btn prev-quote">Previous</button>
+        <button class="btn next-quote">Next</button>
+        <button class="btn add-quote">Add Quote</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
