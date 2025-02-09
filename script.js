@@ -67,6 +67,18 @@ themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-theme");
 });
 
+quoteElement.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(quoteElement.textContent);
+    quoteElement.classList.add("copied");
+    setTimeout(() => {
+      quoteElement.classList.remove("copied");
+    }, 1000);
+  } catch (err) {
+    console.error("Failed to copy text: ", err);
+  }
+});
+
 // Initial quote display
 setTimeout(() => {
   updateQuote(1);
