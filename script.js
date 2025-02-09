@@ -20,9 +20,23 @@ const prevBtn = document.querySelector(".prev-quote");
 const nextBtn = document.querySelector(".next-quote");
 const addQuoteBtn = document.querySelector(".add-quote");
 const themeToggle = document.querySelector(".theme-toggle");
+const heartsToggle = document.querySelector(".hearts-toggle");
 let isAnimating = false;
+let heartsEnabled = true;
+
+heartsToggle.addEventListener("click", () => {
+  heartsEnabled = !heartsEnabled;
+  const hearts = document.querySelector(".floating-hearts");
+  hearts.style.display = heartsEnabled ? "block" : "none";
+
+  // Clear existing hearts when disabled
+  if (!heartsEnabled) {
+    hearts.innerHTML = "";
+  }
+});
 
 function createFloatingHeart() {
+  if (!heartsEnabled) return;
   const heart = document.createElement("div");
   heart.className = "floating-heart";
   heart.style.left = Math.random() * 100 + "vw";
