@@ -70,8 +70,12 @@ themeToggle.addEventListener("click", () => {
 quoteElement.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(quoteElement.textContent);
+    const copyIndicator = document.querySelector(".copy-indicator");
+    copyIndicator.classList.add("show");
     quoteElement.classList.add("copied");
+
     setTimeout(() => {
+      copyIndicator.classList.remove("show");
       quoteElement.classList.remove("copied");
     }, 1000);
   } catch (err) {

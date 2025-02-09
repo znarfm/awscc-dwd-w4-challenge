@@ -123,6 +123,21 @@ body {
   background: rgba(100, 255, 100, 0.2);
 }
 
+.copy-indicator {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5em;
+  color: var(--text-color);
+  font-size: 0.9em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.copy-indicator.show {
+  opacity: 1;
+}
+
 .controls {
   margin-top: 2em;
   display: flex;
