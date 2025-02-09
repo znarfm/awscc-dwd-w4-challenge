@@ -28,6 +28,7 @@ heartsToggle.addEventListener("click", () => {
   heartsEnabled = !heartsEnabled;
   const hearts = document.querySelector(".floating-hearts");
   hearts.style.display = heartsEnabled ? "block" : "none";
+  heartsToggle.classList.toggle("active", heartsEnabled);
 
   // Clear existing hearts when disabled
   if (!heartsEnabled) {
@@ -79,6 +80,7 @@ addQuoteBtn.addEventListener("click", () => {
 
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-theme");
+  themeToggle.classList.toggle("active");
 });
 
 quoteElement.addEventListener("click", async () => {
@@ -96,6 +98,9 @@ quoteElement.addEventListener("click", async () => {
     console.error("Failed to copy text: ", err);
   }
 });
+
+// Add initial active state for hearts toggle since it starts enabled
+heartsToggle.classList.add("active");
 
 // Initial quote display
 setTimeout(() => {
